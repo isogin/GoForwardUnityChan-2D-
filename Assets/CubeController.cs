@@ -34,12 +34,15 @@ public class CubeController : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+
+
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameObject.tag == "GroundTag" || gameObject.tag == "BlockTag")
+        if(other.gameObject.tag == "BlockTag" || other.gameObject.tag == "GroundTag")
         {
             audioSource.PlayOneShot(audioSource.clip);
         }
-        Debug.Log("ぶつかった");
+        
     }
 }
